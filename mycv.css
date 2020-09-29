@@ -1,0 +1,260 @@
+header {
+  padding: 10px;
+  width: 800px;
+  position: relative;
+  top: 20px;
+  left: calc((100vw - 800px)/2);
+  overflow: hidden;
+  opacity: .8;
+  transition: 0.5s; }
+  header span:nth-child(1) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, transparent, #1779ff);
+    animation: animate1 2s linear infinite; }
+  header span:nth-child(2) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, #1779ff);
+    animation: animate2 2s linear infinite;
+    animation-delay: 1s; }
+  header span:nth-child(3) {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to left, transparent, #1779ff);
+    animation: animate3 2s linear infinite; }
+  header span:nth-child(4) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 3px;
+    background: linear-gradient(to top, transparent, #1779ff);
+    animation: animate4 2s linear infinite;
+    animation-delay: 1s; }
+
+header > div {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: #202020;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2); }
+  header > div div {
+    margin-top: 50px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent; }
+    header > div div * {
+      background-color: transparent; }
+  header > div div:before {
+    content: ' ';
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 50%;
+    height: 95%;
+    background: rgba(129, 118, 118, 0.1); }
+
+header:hover {
+  opacity: 1; }
+
+@keyframes animate1 {
+  0% {
+    transform: translateX(-100%); }
+  100% {
+    transform: translateX(100%); } }
+@keyframes animate2 {
+  0% {
+    transform: translateY(-100%); }
+  100% {
+    transform: translateY(100%); } }
+@keyframes animate3 {
+  0% {
+    transform: translateX(100%); }
+  100% {
+    transform: translateX(-100%); } }
+@keyframes animate4 {
+  0% {
+    transform: translateY(100%); }
+  100% {
+    transform: translateY(-100%); } }
+nav {
+  position: relative;
+  left: calc((100vw - 500px)/2);
+  z-index: 10;
+  width: 540px; }
+  nav * {
+    background-color: transparent; }
+  nav ul {
+    display: flex;
+    border-radius: 5px;
+    justify-content: space-between;
+    background-color: white;
+    text-align: center;
+    padding: 0;
+    box-shadow: 0 0 5px 3px rgba(255, 255, 255, 0.8); }
+    nav ul a {
+      width: 180px;
+      padding: 10px;
+      transition: .5s;
+      color: #08001b;
+      font-size: 14px;
+      border-right: 3px solid #c7c7c7; }
+    nav ul a:first-child {
+      border-radius: 5px 0 0 5px; }
+    nav ul a:last-child {
+      border-radius: 0 5px 5px 0;
+      border-right: none; }
+  nav .icon-wrapper {
+    width: 35px;
+    height: 35px;
+    margin-left: calc((180px - 35px)/2.2);
+    overflow: hidden; }
+  nav .icon {
+    transition: 0.5s;
+    width: 35px;
+    height: 35px; }
+    nav .icon .iconify {
+      width: 100%;
+      height: 100%; }
+    nav .icon .iconify:last-child {
+      color: #1779ff; }
+  nav li:hover .icon {
+    transform: translateY(-104%); }
+  nav .name {
+    display: flex;
+    flex-direction: column;
+    height: 20px;
+    position: relative;
+    overflow: hidden; }
+    nav .name span {
+      transition: 0.5s;
+      line-height: 20px; }
+    nav .name span:before {
+      content: attr(data-text);
+      position: absolute;
+      top: -100%;
+      color: #1779ff; }
+  nav li:hover .name span {
+    transform: translateY(100%); }
+
+section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  top: 20px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  height: 100vh; }
+  section h2 {
+    position: relative;
+    left: calc((100vw - 1000px)/2); }
+  section .swiper-wrapper {
+    display: flex; }
+    section .swiper-wrapper .swiper-slide {
+      width: 250px;
+      height: 350px;
+      background-color: #474343;
+      position: relative;
+      margin: 40px;
+      padding: 10px;
+      text-align: center;
+      font-size: 14px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      overflow: hidden; }
+      section .swiper-wrapper .swiper-slide p:first-child {
+        font-size: 20px; }
+    section .swiper-wrapper .swiper-slide:before {
+      content: ' ';
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      width: 100%;
+      height: 3px;
+      background: #1779ff; }
+    section .swiper-wrapper .card-hover {
+      background: linear-gradient(#03a9f4, #e91ee3);
+      position: absolute;
+      top: 100%;
+      width: 100%;
+      height: 100%;
+      transition: 0.5s; }
+    section .swiper-wrapper .swiper-slide:hover .card-hover {
+      left: 0;
+      top: 0;
+      z-index: -1; }
+
+.sticky {
+  position: sticky;
+  top: 8px; }
+
+footer {
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  footer .link {
+    display: flex;
+    width: 800px;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px; }
+  footer .social {
+    width: 50px;
+    height: 50px;
+    color: #08001b;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 100px;
+    box-shadow: 0 8px 15px 3px #C7C7C7;
+    transition: .5s;
+    position: relative;
+    background: linear-gradient(0deg, #ddd, #fff); }
+    footer .social .iconify {
+      width: 40px;
+      height: 40px;
+      border-radius: 100px;
+      background: transparent; }
+    footer .social .logo {
+      background: linear-gradient(0deg, #fff, #ddd);
+      width: 68px;
+      height: 68px;
+      position: absolute;
+      border-radius: 100px;
+      top: 11px;
+      left: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+  footer .social:hover {
+    box-shadow: 0 2px 15px 0px #C7C7C7; }
+
+#instagram:hover {
+  color: #bc2a8d; }
+
+#linkedin:hover {
+  color: #007bb5; }
+
+#line:hover {
+  color: #00B900; }
+
+/*# sourceMappingURL=mycv.css.map */
