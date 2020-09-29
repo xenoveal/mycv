@@ -157,7 +157,8 @@ section {
   top: 20px;
   margin-top: 50px;
   margin-bottom: 50px;
-  height: 100vh; }
+  height: 100vh;
+  overflow: hidden; }
   section h2 {
     position: relative;
     left: calc((100vw - 1000px)/2); }
